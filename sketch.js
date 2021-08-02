@@ -47,22 +47,11 @@ function draw(){
 
 async function getBackgroundImg(){
 
-    // write code to fetch time from API
-    var response = await fetch("http://worldtimeapi.org/api/timezone/asia/kolkata")
- 
-    //change the data in JSON format and store it in variable responseJSON
-    var responseJSON = await response.json(); 
+   // Since GitHub Pages didn't allow me to fetch the hour from the api, I shall Improvise UWU
 
+    var response = new Date();
     
-    //fetch datetime from responseJSON
-    var datetime =  responseJSON.datetime;
-    
-    
-
-    // slice the datetime to extract hour
-    hour = datetime.slice(11, 13);
-    
-
+    hour = response.getHours();
     
     if(hour >= 0 && hour < 18 ) {
         bg = "sunrise.png";
